@@ -1,0 +1,620 @@
+Analysis & Synthesis report for game_better
+Sat Mar 11 09:54:47 2023
+Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |game_better
+ 14. Parameter Settings for User Entity Instance: beeper:bp1|dividend:d1
+ 15. Parameter Settings for User Entity Instance: dividend:d1
+ 16. Parameter Settings for User Entity Instance: dividend:d2
+ 17. Parameter Settings for User Entity Instance: debounce:deb1
+ 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 20. Port Connectivity Checks: "debounce:deb1"
+ 21. Port Connectivity Checks: "dividend:d2"
+ 22. Port Connectivity Checks: "dividend:d1"
+ 23. Port Connectivity Checks: "beeper:bp1|dividend:d1"
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat Mar 11 09:54:47 2023    ;
+; Quartus II 64-Bit Version   ; 9.1 Build 222 10/21/2009 SJ Full Version ;
+; Revision Name               ; game_better                              ;
+; Top-level Entity Name       ; game_better                              ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 580                                      ;
+; Total pins                  ; 66                                       ;
+; Total virtual pins          ; 0                                        ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
++-----------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EPM1270T144C5      ;                    ;
+; Top-level entity name                                                      ; game_better        ; game_better        ;
+; Family name                                                                ; MAX II             ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                       ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+
+; game_better.v                    ; yes             ; User Verilog HDL File        ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/game_better.v              ;
+; beeper.v                         ; yes             ; User Verilog HDL File        ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/beeper.v                   ;
+; dividend.v                       ; yes             ; Auto-Found Verilog HDL File  ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/dividend.v                 ;
+; dianzhen.v                       ; yes             ; Auto-Found Verilog HDL File  ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/dianzhen.v                 ;
+; example_seg.v                    ; yes             ; Auto-Found Verilog HDL File  ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/example_seg.v              ;
+; debounce.v                       ; yes             ; Auto-Found Verilog HDL File  ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/debounce.v                 ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/programdata/intelfpga_lite/alter/quartus/libraries/megafunctions/lpm_divide.tdf ;
+; db/lpm_divide_nvl.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/db/lpm_divide_nvl.tdf      ;
+; db/sign_div_unsign_8kh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/db/sign_div_unsign_8kh.tdf ;
+; db/alt_u_div_bie.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/db/alt_u_div_bie.tdf       ;
+; db/add_sub_e7c.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/db/add_sub_e7c.tdf         ;
+; db/add_sub_f7c.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/db/add_sub_f7c.tdf         ;
+; db/add_sub_g7c.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/db/add_sub_g7c.tdf         ;
+; db/add_sub_h7c.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/db/add_sub_h7c.tdf         ;
+; db/add_sub_i7c.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/db/add_sub_i7c.tdf         ;
+; db/lpm_divide_qnl.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/ProgramData/intelFPGA_lite/alter/program/game_better/db/lpm_divide_qnl.tdf      ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 580   ;
+;     -- Combinational with no register       ; 396   ;
+;     -- Register only                        ; 37    ;
+;     -- Combinational with a register        ; 147   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 280   ;
+;     -- 3 input functions                    ; 106   ;
+;     -- 2 input functions                    ; 129   ;
+;     -- 1 input functions                    ; 28    ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 475   ;
+;     -- arithmetic mode                      ; 105   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 61    ;
+;     -- asynchronous clear/load mode         ; 101   ;
+;                                             ;       ;
+; Total registers                             ; 184   ;
+; Total logic cells in carry chains           ; 119   ;
+; I/O pins                                    ; 66    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 116   ;
+; Total fan-out                               ; 2225  ;
+; Average fan-out                             ; 3.44  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                             ;
++----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node             ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                ; Library Name ;
++----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |game_better                           ; 580 (167)   ; 184          ; 0          ; 66   ; 0            ; 396 (103)    ; 37 (5)            ; 147 (59)         ; 119 (0)         ; 0 (0)      ; |game_better                                                                                                                       ; work         ;
+;    |beeper:bp1|                        ; 153 (43)    ; 54           ; 0          ; 0    ; 0            ; 99 (25)      ; 9 (0)             ; 45 (18)          ; 56 (10)         ; 0 (0)      ; |game_better|beeper:bp1                                                                                                            ; work         ;
+;       |beep:b1|                        ; 66 (66)     ; 19           ; 0          ; 0    ; 0            ; 47 (47)      ; 0 (0)             ; 19 (19)          ; 29 (29)         ; 0 (0)      ; |game_better|beeper:bp1|beep:b1                                                                                                    ; work         ;
+;       |dividend:d1|                    ; 44 (44)     ; 17           ; 0          ; 0    ; 0            ; 27 (27)      ; 9 (9)             ; 8 (8)            ; 17 (17)         ; 0 (0)      ; |game_better|beeper:bp1|dividend:d1                                                                                                ; work         ;
+;    |debounce:deb1|                     ; 45 (45)     ; 36           ; 0          ; 0    ; 0            ; 9 (9)        ; 10 (10)           ; 26 (26)          ; 16 (16)         ; 0 (0)      ; |game_better|debounce:deb1                                                                                                         ; work         ;
+;    |dianzhen:dz1|                      ; 46 (0)      ; 0            ; 0          ; 0    ; 0            ; 46 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |game_better|dianzhen:dz1                                                                                                          ; work         ;
+;       |xianshi:u2|                     ; 46 (46)     ; 0            ; 0          ; 0    ; 0            ; 46 (46)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |game_better|dianzhen:dz1|xianshi:u2                                                                                               ; work         ;
+;    |dividend:d1|                       ; 44 (44)     ; 18           ; 0          ; 0    ; 0            ; 26 (26)      ; 10 (10)           ; 8 (8)            ; 18 (18)         ; 0 (0)      ; |game_better|dividend:d1                                                                                                           ; work         ;
+;    |dividend:d2|                       ; 22 (22)     ; 9            ; 0          ; 0    ; 0            ; 13 (13)      ; 2 (2)             ; 7 (7)            ; 9 (9)           ; 0 (0)      ; |game_better|dividend:d2                                                                                                           ; work         ;
+;    |example_seg:segs|                  ; 71 (71)     ; 3            ; 0          ; 0    ; 0            ; 68 (68)      ; 1 (1)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |game_better|example_seg:segs                                                                                                      ; work         ;
+;    |lpm_divide:Div1|                   ; 14 (0)      ; 0            ; 0          ; 0    ; 0            ; 14 (0)       ; 0 (0)             ; 0 (0)            ; 9 (0)           ; 0 (0)      ; |game_better|lpm_divide:Div1                                                                                                       ; work         ;
+;       |lpm_divide_nvl:auto_generated|  ; 14 (0)      ; 0            ; 0          ; 0    ; 0            ; 14 (0)       ; 0 (0)             ; 0 (0)            ; 9 (0)           ; 0 (0)      ; |game_better|lpm_divide:Div1|lpm_divide_nvl:auto_generated                                                                         ; work         ;
+;          |sign_div_unsign_8kh:divider| ; 14 (0)      ; 0            ; 0          ; 0    ; 0            ; 14 (0)       ; 0 (0)             ; 0 (0)            ; 9 (0)           ; 0 (0)      ; |game_better|lpm_divide:Div1|lpm_divide_nvl:auto_generated|sign_div_unsign_8kh:divider                                             ; work         ;
+;             |alt_u_div_bie:divider|    ; 14 (5)      ; 0            ; 0          ; 0    ; 0            ; 14 (5)       ; 0 (0)             ; 0 (0)            ; 9 (0)           ; 0 (0)      ; |game_better|lpm_divide:Div1|lpm_divide_nvl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_bie:divider                       ; work         ;
+;                |add_sub_h7c:add_sub_3| ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 3 (3)           ; 0 (0)      ; |game_better|lpm_divide:Div1|lpm_divide_nvl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_bie:divider|add_sub_h7c:add_sub_3 ; work         ;
+;                |add_sub_i7c:add_sub_4| ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |game_better|lpm_divide:Div1|lpm_divide_nvl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_bie:divider|add_sub_i7c:add_sub_4 ; work         ;
+;    |lpm_divide:Mod1|                   ; 18 (0)      ; 0            ; 0          ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 0 (0)            ; 11 (0)          ; 0 (0)      ; |game_better|lpm_divide:Mod1                                                                                                       ; work         ;
+;       |lpm_divide_qnl:auto_generated|  ; 18 (0)      ; 0            ; 0          ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 0 (0)            ; 11 (0)          ; 0 (0)      ; |game_better|lpm_divide:Mod1|lpm_divide_qnl:auto_generated                                                                         ; work         ;
+;          |sign_div_unsign_8kh:divider| ; 18 (0)      ; 0            ; 0          ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 0 (0)            ; 11 (0)          ; 0 (0)      ; |game_better|lpm_divide:Mod1|lpm_divide_qnl:auto_generated|sign_div_unsign_8kh:divider                                             ; work         ;
+;             |alt_u_div_bie:divider|    ; 18 (7)      ; 0            ; 0          ; 0    ; 0            ; 18 (7)       ; 0 (0)             ; 0 (0)            ; 11 (0)          ; 0 (0)      ; |game_better|lpm_divide:Mod1|lpm_divide_qnl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_bie:divider                       ; work         ;
+;                |add_sub_h7c:add_sub_3| ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 4 (4)           ; 0 (0)      ; |game_better|lpm_divide:Mod1|lpm_divide_qnl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_bie:divider|add_sub_h7c:add_sub_3 ; work         ;
+;                |add_sub_i7c:add_sub_4| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |game_better|lpm_divide:Mod1|lpm_divide_qnl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_bie:divider|add_sub_i7c:add_sub_4 ; work         ;
++----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; mstep[1]                                           ; level               ; yes                    ;
+; mstep[2]                                           ; level               ; yes                    ;
+; mstep[4]                                           ; level               ; yes                    ;
+; Number of user-specified and inferred latches = 3  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; dianzhen:dz1|counter8:u1|count[0]     ; Merged with example_seg:segs|i[0]      ;
+; beeper:bp1|dividend:d1|cnt_p[0]       ; Merged with dividend:d1|cnt_p[0]       ;
+; dividend:d2|cnt_p[0]                  ; Merged with dividend:d1|cnt_p[0]       ;
+; beeper:bp1|dividend:d1|cnt_p[1]       ; Merged with dividend:d1|cnt_p[1]       ;
+; dividend:d2|cnt_p[1]                  ; Merged with dividend:d1|cnt_p[1]       ;
+; dividend:d1|cnt_p[2]                  ; Merged with dividend:d2|cnt_p[2]       ;
+; dianzhen:dz1|counter8:u1|count[1]     ; Merged with example_seg:segs|i[1]      ;
+; dianzhen:dz1|counter8:u1|count[2]     ; Merged with example_seg:segs|i[2]      ;
+; example_seg:segs|i[3]                 ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 9 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 184   ;
+; Number of registers using Synchronous Clear  ; 61    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 93    ;
+; Number of registers using Asynchronous Load  ; 8     ;
+; Number of registers using Clock Enable       ; 54    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; led[15]~reg0                            ; 7       ;
+; status                                  ; 17      ;
+; col_rat[0]                              ; 6       ;
+; col_r_cat[0]                            ; 3       ;
+; col_rat[1]                              ; 6       ;
+; col_r_cat[1]                            ; 3       ;
+; col_g_dog[0]                            ; 3       ;
+; col_g_dog[1]                            ; 3       ;
+; count[3]                                ; 3       ;
+; count[2]                                ; 4       ;
+; count[1]                                ; 6       ;
+; count[0]                                ; 7       ;
+; level                                   ; 3       ;
+; Total number of inverted registers = 13 ;         ;
++-----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |game_better|beeper:bp1|beep:b1|time_cnt[8]   ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |game_better|beeper:bp1|t1[0]                 ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |game_better|beeper:bp1|t[9]                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_better|tune_id[0]                       ;
+; 8:1                ; 15 bits   ; 75 LEs        ; 60 LEs               ; 15 LEs                 ; Yes        ; |game_better|led[5]~reg0                      ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 16 LEs               ; 2 LEs                  ; Yes        ; |game_better|beeper:bp1|ttune[2]              ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |game_better|cnt_1[0]                         ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_better|count[0]                         ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_better|col_r_cat[1]                     ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |game_better|col_g_dog[0]                     ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |game_better|col_rat[1]                       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |game_better|count_1                          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |game_better|dianzhen:dz1|xianshi:u2|col_r[2] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |game_better|col_r_cat                        ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |game_better|example_seg:segs|cat[5]          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |game_better|example_seg:segs|cat[7]          ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |game_better|dianzhen:dz1|xianshi:u2|col_g[4] ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |game_better|col_g_dog                        ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 12 LEs               ; 24 LEs                 ; No         ; |game_better|col_rat                          ;
+; 47:1               ; 2 bits    ; 62 LEs        ; 50 LEs               ; 12 LEs                 ; No         ; |game_better|example_seg:segs|seg[3]          ;
+; 47:1               ; 2 bits    ; 62 LEs        ; 46 LEs               ; 16 LEs                 ; No         ; |game_better|example_seg:segs|seg[0]          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |game_better ;
++----------------+----------+-------------------------------------------------+
+; Parameter Name ; Value    ; Type                                            ;
++----------------+----------+-------------------------------------------------+
+; start          ; 00000011 ; Unsigned Binary                                 ;
++----------------+----------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: beeper:bp1|dividend:d1 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; WIDTH          ; 18    ; Signed Integer                             ;
+; N              ; 62500 ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dividend:d1 ;
++----------------+--------+--------------------------------+
+; Parameter Name ; Value  ; Type                           ;
++----------------+--------+--------------------------------+
+; WIDTH          ; 18     ; Signed Integer                 ;
+; N              ; 250000 ; Signed Integer                 ;
++----------------+--------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dividend:d2 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; WIDTH          ; 10    ; Signed Integer                  ;
+; N              ; 1000  ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:deb1 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; N              ; 5     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_nvl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_qnl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debounce:deb1"                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rst     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rst[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividend:d2"                                                                                                                                                                           ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rst_n     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rst_n[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividend:d1"                                                                                                                                                                           ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rst_n     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rst_n[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "beeper:bp1|dividend:d1"                                                                                                                                                                ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rst_n     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rst_n[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Sat Mar 11 09:54:46 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off game_better -c game_better
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Found 1 design units, including 1 entities, in source file game_better.v
+    Info: Found entity 1: game_better
+Info: Found 2 design units, including 2 entities, in source file beeper.v
+    Info: Found entity 1: beeper
+    Info: Found entity 2: beep
+Warning (10236): Verilog HDL Implicit Net warning at game_better.v(289): created implicit net for "clk1k"
+Warning (10236): Verilog HDL Implicit Net warning at game_better.v(317): created implicit net for "clk4Hz"
+Warning (10236): Verilog HDL Implicit Net warning at beeper.v(129): created implicit net for "clk16Hz"
+Info: Elaborating entity "game_better" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at game_better.v(248): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at game_better.v(252): truncated value with size 32 to match size of target (4)
+Warning (10235): Verilog HDL Always Construct warning at game_better.v(263): variable "level" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at game_better.v(261): inferring latch(es) for variable "mstep", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at game_better.v(276): variable "mstep" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at game_better.v(277): variable "mstep" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (10041): Inferred latch for "mstep[0]" at game_better.v(261)
+Info (10041): Inferred latch for "mstep[1]" at game_better.v(261)
+Info (10041): Inferred latch for "mstep[2]" at game_better.v(261)
+Info (10041): Inferred latch for "mstep[3]" at game_better.v(261)
+Info (10041): Inferred latch for "mstep[4]" at game_better.v(261)
+Info: Elaborating entity "beeper" for hierarchy "beeper:bp1"
+Warning (10230): Verilog HDL assignment warning at beeper.v(35): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at beeper.v(93): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at beeper.v(107): truncated value with size 32 to match size of target (3)
+Info: Elaborating entity "beep" for hierarchy "beeper:bp1|beep:b1"
+Warning: Using design file dividend.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: dividend
+Info: Elaborating entity "dividend" for hierarchy "beeper:bp1|dividend:d1"
+Warning (10230): Verilog HDL assignment warning at dividend.v(21): truncated value with size 32 to match size of target (18)
+Warning (10230): Verilog HDL assignment warning at dividend.v(42): truncated value with size 32 to match size of target (18)
+Warning: Using design file dianzhen.v, which is not specified as a design file for the current project, but contains definitions for 3 design units and 3 entities in project
+    Info: Found entity 1: dianzhen
+    Info: Found entity 2: counter8
+    Info: Found entity 3: xianshi
+Info: Elaborating entity "dianzhen" for hierarchy "dianzhen:dz1"
+Info: Elaborating entity "counter8" for hierarchy "dianzhen:dz1|counter8:u1"
+Info: Elaborating entity "xianshi" for hierarchy "dianzhen:dz1|xianshi:u2"
+Warning (10235): Verilog HDL Always Construct warning at dianzhen.v(48): variable "led" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at dianzhen.v(53): variable "colred_cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at dianzhen.v(58): variable "colred_cat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at dianzhen.v(69): variable "colgreen_dog" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at dianzhen.v(74): variable "colgreen_dog" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at dianzhen.v(83): variable "col_rat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at dianzhen.v(84): variable "col_rat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at dianzhen.v(88): variable "col_rat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at dianzhen.v(89): variable "col_rat" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning: Using design file example_seg.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: example_seg
+Info: Elaborating entity "example_seg" for hierarchy "example_seg:segs"
+Warning (10230): Verilog HDL assignment warning at example_seg.v(19): truncated value with size 32 to match size of target (4)
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(22): variable "sw" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(27): variable "led" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(30): variable "seg1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(31): variable "seg2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(32): variable "seg3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(33): variable "seg4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(39): variable "status" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(41): variable "seg3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(42): variable "seg4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(47): variable "seg1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(48): variable "seg2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(53): variable "seg1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(54): variable "seg2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(55): variable "seg3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at example_seg.v(56): variable "seg4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info: Elaborating entity "dividend" for hierarchy "dividend:d1"
+Warning (10230): Verilog HDL assignment warning at dividend.v(21): truncated value with size 32 to match size of target (18)
+Warning (10230): Verilog HDL assignment warning at dividend.v(42): truncated value with size 32 to match size of target (18)
+Info: Elaborating entity "dividend" for hierarchy "dividend:d2"
+Warning (10230): Verilog HDL assignment warning at dividend.v(21): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at dividend.v(42): truncated value with size 32 to match size of target (10)
+Warning: Using design file debounce.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: debounce
+Info: Elaborating entity "debounce" for hierarchy "debounce:deb1"
+Info: Inferred 2 megafunctions from design logic
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1"
+Info: Elaborated megafunction instantiation "lpm_divide:Div1"
+Info: Instantiated megafunction "lpm_divide:Div1" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "5"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_nvl.tdf
+    Info: Found entity 1: lpm_divide_nvl
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8kh.tdf
+    Info: Found entity 1: sign_div_unsign_8kh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_bie.tdf
+    Info: Found entity 1: alt_u_div_bie
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_e7c.tdf
+    Info: Found entity 1: add_sub_e7c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_f7c.tdf
+    Info: Found entity 1: add_sub_f7c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_g7c.tdf
+    Info: Found entity 1: add_sub_g7c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_h7c.tdf
+    Info: Found entity 1: add_sub_h7c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_i7c.tdf
+    Info: Found entity 1: add_sub_i7c
+Info: Elaborated megafunction instantiation "lpm_divide:Mod1"
+Info: Instantiated megafunction "lpm_divide:Mod1" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "5"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_qnl.tdf
+    Info: Found entity 1: lpm_divide_qnl
+Warning: 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: Duplicate LATCH primitives merged into single LATCH primitive
+    Info: Duplicate LATCH primitive "mstep[2]" merged with LATCH primitive "mstep[1]"
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "seg_f[7]" is stuck at GND
+Info: Registers with preset signals will power-up high
+Info: Implemented 646 device resources after synthesis - the final resource count might be different
+    Info: Implemented 9 input pins
+    Info: Implemented 57 output pins
+    Info: Implemented 580 logic cells
+Info: Generated suppressed messages file D:/ProgramData/intelFPGA_lite/alter/program/game_better/game_better.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 50 warnings
+    Info: Peak virtual memory: 4419 megabytes
+    Info: Processing ended: Sat Mar 11 09:54:48 2023
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/ProgramData/intelFPGA_lite/alter/program/game_better/game_better.map.smsg.
+
+

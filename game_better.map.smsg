@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at game_better.v(138): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at beeper.v(16): always construct contains both blocking and non-blocking assignments
